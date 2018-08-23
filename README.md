@@ -1,7 +1,7 @@
 # go-wasm-counter
 
 * Simple counter app written in go.
-* This app running on browser.
+* This app runs on browser.
 
 ## Example
 
@@ -26,3 +26,13 @@ make build
 npm install -g serve
 serve . // app served on localhost:5000
 ```
+
+## References
+
+* https://github.com/mattn/golang-wasm-example
+* https://github.com/golang/go/tree/master/misc/wasm
+* https://tip.golang.org/pkg/syscall/js
+
+## License
+
+MIT
