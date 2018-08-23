@@ -27,7 +27,7 @@ make build
 
 ```console
 npm install -g serve
-serve . // app served on localhost:5000
+serve . # app served on localhost:5000
 ```
 
 ## References
