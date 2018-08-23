@@ -4,19 +4,19 @@ import (
 	"syscall/js"
 )
 
-type domCounter struct {
+type basicCounter struct {
 	count   int
 	countEl js.Value
 }
 
-// NewDOMCounter returns new DOMCounter
-func NewDOMCounter(elementID string) Counter {
-	c := &domCounter{}
+// NewBasicCounter returns new DOMCounter
+func NewBasicCounter(elementID string) Counter {
+	c := &basicCounter{}
 	c.initDOM(elementID)
 	return c
 }
 
-func (c *domCounter) initDOM(elementID string) {
+func (c *basicCounter) initDOM(elementID string) {
 	doc := js.Global().Get("document")
 	el := doc.Call("getElementById", elementID)
 	el.Call("insertAdjacentHTML", "beforeend", `<div id="count"></div><div><button id="inc">+</button><button id="dec">-</button></div>`)
@@ -28,20 +28,20 @@ func (c *domCounter) initDOM(elementID string) {
 	c.update()
 }
 
-func (c *domCounter) update() {
+func (c *basicCounter) update() {
 	c.countEl.Set("textContent", c.count)
 }
 
-func (c *domCounter) Increment() {
+func (c *basicCounter) Increment() {
 	c.count++
 	c.update()
 }
 
-func (c *domCounter) Decrement() {
+func (c *basicCounter) Decrement() {
 	c.count--
 	c.update()
 }
 
-func (c *domCounter) Count() int {
+func (c *basicCounter) Count() int {
 	return c.count
 }

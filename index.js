@@ -421,7 +421,7 @@
   };
 })();
 
-(async () => {
+async function runApp(wasmPath) {
   if (!WebAssembly.instantiateStreaming) {
     // polyfill
     WebAssembly.instantiateStreaming = async (resp, importObject) => {
@@ -433,9 +433,6 @@
   const {
     module: mod,
     instance: inst,
-  } = await WebAssembly.instantiateStreaming(
-    fetch('index.wasm'),
-    go.importObject
-  );
+  } = await WebAssembly.instantiateStreaming(fetch(wasmPath), go.importObject);
   await go.run(inst);
-})();
+}

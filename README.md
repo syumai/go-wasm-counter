@@ -5,7 +5,10 @@
 
 ## Example
 
-https://syumai.github.io/go-wasm-counter/
+* [Basic counter](https://syumai.github.io/go-wasm-counter/)
+  - [Code](https://github.com/syumai/go-wasm-counter/tree/master/counter/basiccounter.go)
+* [Vue.js counter](https://syumai.github.io/go-wasm-counter/vue.html)
+  - [Code](https://github.com/syumai/go-wasm-counter/tree/master/counter/vuecounter.go)
 
 ## Environment
 
