@@ -17,7 +17,7 @@
 ## Development
 
 ```console
-go get go1.11rc2
+go get golang.org/dl/go1.11rc2
 go1.11rc2 download
 
 make build
