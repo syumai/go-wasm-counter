@@ -12,13 +12,13 @@
 
 ## Environment
 
-* go 1.11rc2
+* go 1.11
 
 ## Development
 
 ```console
-go get golang.org/dl/go1.11rc2
-go1.11rc2 download
+go get golang.org/dl/go1.11
+go1.11 download
 
 make build
 ```

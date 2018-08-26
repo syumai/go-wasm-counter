@@ -1,4 +1,4 @@
-GO_BIN = go1.11rc2
+GO_BIN = go1.11
 
 .PHONY: build
 build:
