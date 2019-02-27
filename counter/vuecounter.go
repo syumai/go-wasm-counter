@@ -24,8 +24,8 @@ func (c *vueCounter) initVM(elementID string) {
 			"count": 0,
 		},
 		"methods": map[string]interface{}{
-			"increment": js.NewCallback(func([]js.Value) { c.Increment() }),
-			"decrement": js.NewCallback(func([]js.Value) { c.Decrement() }),
+			"increment": js.FuncOf(func(js.Value, []js.Value) interface{} { c.Increment(); return nil }),
+			"decrement": js.FuncOf(func(js.Value, []js.Value) interface{} { c.Decrement(); return nil }),
 		},
 	})
 }

@@ -23,8 +23,8 @@ func (c *basicCounter) initDOM(elementID string) {
 	c.countEl = doc.Call("getElementById", "count")
 	inc := doc.Call("getElementById", "inc")
 	dec := doc.Call("getElementById", "dec")
-	inc.Call("addEventListener", "click", js.NewCallback(func([]js.Value) { c.Increment() }))
-	dec.Call("addEventListener", "click", js.NewCallback(func([]js.Value) { c.Decrement() }))
+	inc.Call("addEventListener", "click", js.FuncOf(func(js.Value, []js.Value) interface{} { c.Increment(); return nil }))
+	dec.Call("addEventListener", "click", js.FuncOf(func(js.Value, []js.Value) interface{} { c.Decrement(); return nil }))
 	c.update()
 }
 
